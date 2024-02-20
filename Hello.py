@@ -25,7 +25,8 @@ def run():
     )
 
     st.write("# Welcome to Streamlit! 👋")
-
+    st.write("by Mariana Jane L. Ramos")
+    
     st.sidebar.success("Select a demo above.")
 
     st.markdown(
