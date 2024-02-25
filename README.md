@@ -1,6 +1,6 @@
 # Welcome to streamlit
 
-by: Mariana Jane L. Ramos
+By: Mariana Jane L. Ramos
 
 [My Streamlit App](https://ramos-3a-oyz1efdk88h.streamlit.app/)
 
