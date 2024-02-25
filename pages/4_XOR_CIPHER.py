@@ -35,7 +35,7 @@ def xor_decrypt(ciphertext, key):
 plaintext = bytes(st.text_area("Plaintext").encode())
 key = bytes(st.text_area("Key").encode())
 
-if st.button('Submit', key=1):
+if st.button('Submit', key=1, type="primary"):
     if not key:
         st.error('Invalid Key!')
     else:
