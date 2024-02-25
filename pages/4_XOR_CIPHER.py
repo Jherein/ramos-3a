@@ -1,8 +1,21 @@
 import streamlit as st
 
 st.balloons()
-st.header('XOR CIPHER', divider='rainbow')
+st.header("Welcome to XOR Cipher!")
+st.write("What is your name?")
 
+txt_FNAME = st.text_input("First Name:")
+txt_LNAME = st.text_input("Last Name:")
+
+btn_submit = st.button("Submit")
+
+if btn_submit:
+    # st.error(f"Hello {txt_FNAME} {txt_LNAME}")
+    # st.success(f"Hello {txt_FNAME} {txt_LNAME}")
+    st.write(f"Hello {txt_FNAME} {txt_LNAME}")
+
+
+st.header('XOR CIPHER', divider='rainbow')
 def xor_encrypt(plaintext, key):
     ciphertext = bytearray()
     for i in range(len(plaintext)):
