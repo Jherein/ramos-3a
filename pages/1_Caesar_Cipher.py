@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.balloons()
 st.header("Caesar Cipher🔐🔐")
 st.sidebar.write("Caesar Cipher🔐")
 
@@ -20,8 +21,8 @@ def encrypt_decrypt(text, shift_keys, ifdecrypt):
     
     return result 
 
-text = st.text_area('Text')
-shift_keys = st.text_area('Shift Keys').strip("[]").split()
+text = st.text_input('Text')
+shift_keys = st.text_input('Shift Keys').strip("[]").split()
 shift_keys = list(map(int, shift_keys))
 
 
