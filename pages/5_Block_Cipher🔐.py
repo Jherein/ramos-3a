@@ -1,10 +1,16 @@
 import streamlit as st
+from nav import navi
 
-st.balloons()
-st.header("Block Cipher🔐🔐")
-st.sidebar.write("Block Cipher🔐")
+st.set_page_config(
+        page_title="Block Cipher",
+        page_icon="🔐",
+        layout="wide"
+    )
 
-st.write('Welcome to Block Cipher!!')
+navi()
+
+st.header("Welcome to Block Cipher!🔐")
+st.header('BLOCK CIPHER', divider='rainbow')
 
 def pad(data, block_size):    # CMS (Cryptographic Message Syntax). This pads with the same value as the number of padding bytes.
     # Calculate the number of bytes needed to reach a multiple of block size.
@@ -82,8 +88,8 @@ def xor_decrypt(ciphertext, key, block_size):
 if __name__ == "__main__":
 
     # Define the plaintext and encryption key
-    plaintext = bytes(st.text_area('Plaintext').encode())
-    key = bytes(st.text_area('Key').encode())
+    plaintext = bytes(st.text_input('Plaintext').encode())
+    key = bytes(st.text_input('Key').encode())
     block_size = int(st.number_input('Block Size', step=1, format="%d", placeholder="Insert a number..."))
     sbn_submit = st.button('Submit')
 

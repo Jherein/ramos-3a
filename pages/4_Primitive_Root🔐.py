@@ -1,10 +1,16 @@
 import streamlit as st
+from nav import navi
 
-st.balloons()
-st.header("Primitive Root🔐🔐")
-st.sidebar.write("Primitive Root🔐")
+st.set_page_config(
+        page_title="Primitive Root",
+        page_icon="🔐",
+        layout="wide"
+    )
 
-st.write("Welcome to Primitive Root!!")
+navi()
+
+st.header("Welcome to Primitive Root!🔐")
+st.header('PRIMITIVE ROOT', divider='rainbow')
 
 def is_prime(modulus):
     if (modulus) < 2:

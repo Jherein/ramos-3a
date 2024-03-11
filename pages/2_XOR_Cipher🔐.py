@@ -1,4 +1,5 @@
 import streamlit as st
+from nav import navi
 
 st.set_page_config(
         page_title="XOR Cipher",
@@ -6,13 +7,11 @@ st.set_page_config(
         layout="wide"
     )
 
-st.balloons()
-st.header("Welcome to XOR Cipher!🔐🔐")
+navi()
 
-st.sidebar.write("XOR Cipher!🔐🔐")
-
-
+st.header("Welcome to XOR Cipher!🔐")
 st.header('XOR CIPHER', divider='rainbow')
+
 def xor_encrypt(plaintext, key):
     ciphertext = bytearray()
     for i in range(len(plaintext)):

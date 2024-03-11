@@ -1,11 +1,16 @@
 import streamlit as st
+from nav import navi 
 
-st.balloons()
-st.header("Caesar Cipher🔐🔐")
-st.sidebar.write("Caesar Cipher🔐")
+st.set_page_config(
+        page_title="Caesar Cipher",
+        page_icon="🔐",
+        layout="wide"
+    )
 
+navi()
 
-st.write("Welcome to Caesar Cipher!!")
+st.header(" Welcome to Caesar Cipher!🔐")
+st.header('CAESAR CIPHER', divider='rainbow')
 
 def encrypt_decrypt(text, shift_keys, ifdecrypt):
     result = ""
