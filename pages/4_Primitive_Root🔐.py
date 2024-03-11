@@ -39,8 +39,8 @@ def is_primitive(base, modulus):
     return False
         
 def main():
-    modulus = int(st.number_input('Modulus', value=0))
-    g = int(st.number_input('Primitive', value=0))
+    modulus = int(st.number_input('Modulus', value=0, placeholder="Must be a prime number..."))
+    g = int(st.number_input('Primitive', value=0, placeholder="Inter a valid number..."))
 
     if not modulus or not g:
         st.warning("Please enter valid values for Modulus and Primitive.")

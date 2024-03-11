@@ -90,8 +90,8 @@ if __name__ == "__main__":
     # Define the plaintext and encryption key
     plaintext = bytes(st.text_input('Plaintext').encode())
     key = bytes(st.text_input('Key').encode())
-    block_size = int(st.number_input('Block Size', step=1, format="%d", placeholder="Insert a number..."))
-    sbn_submit = st.button('Submit')
+    block_size = int(st.number_input('Block Size', step=1, format="%d", placeholder="Block size must be one of 8, 16, 32, 64, or 128 bytes"))
+    sbn_submit = st.button('Submit', type='primary')
 
 if sbn_submit:  
     if block_size not in [8, 16, 32, 64, 128]:
