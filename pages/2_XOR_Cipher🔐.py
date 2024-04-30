@@ -43,10 +43,12 @@ if st.button('Submit', key=1, type="primary"):
         elif len(plaintext.decode()) < len(key.decode()):
             st.warning('Plaintext length should be equal or greater than the length of key')
         else:
-            encrypted = xor_encrypt(plaintext, key)
-            st.write('Ciphertext:', encrypted.decode())
-
-            decrypted = xor_decrypt(encrypted, key)
-            st.write('Decrypted:', decrypted.decode()) 
+            col1, col2 = st.columns(2)
+            with col1:
+                encrypted = xor_encrypt(plaintext, key)
+                st.write('Ciphertext:', encrypted.decode())
+            with col2:
+                decrypted = xor_decrypt(encrypted, key)
+                st.write('Decrypted:', decrypted.decode()) 
         
 
