@@ -8,7 +8,7 @@ st.header('SHA1', divider='rainbow')
 on = st.toggle("Show History")
 
 if on:
-    st.write("")
+    st.write("Secure Hash Algorithm 1, or SHA-1, was developed in 1993 by the U.S. government's standards agency National Institute of Standards and Technology (NIST). It is widely used in security applications and protocols, including TLS, SSL, PGP, SSH, IPsec, and S/MIME. SHA-1 works by feeding a message as a bit string of length less than 2 ^ 64 bits, and producing a 160-bit hash value known as a message digest. ")
 
 def compute_sha1(input_string):
     # Create a SHA-1 hash object
@@ -24,9 +24,9 @@ def compute_sha1(input_string):
 
 genre = st.radio(
     "Choose Input",
-    [":rainbow[Text]", "File"])
+    ["Text", "File"])
 
-if genre == ':rainbow[Text]':
+if genre == 'Text':
     st.write('You selected Text.')
     input_string = st.text_area('Plaintext', placeholder="Input Text...")
     button = st.button("Submit", type="primary")

@@ -9,7 +9,7 @@ st.header('BLAKE2', divider='rainbow')
 on = st.toggle("Show History")
 
 if on:
-    st.write("")
+    st.write("BLAKE2 is a cryptographic hash function faster than MD5, SHA-1, SHA-2, and SHA-3, yet is at least as secure as the latest standard SHA-3. BLAKE2 has been adopted by many projects due to its high speed, security, and simplicity.  The BLAKE2 cryptographic hash function [BLAKE2] was designed by Jean-Philippe Aumasson, Samuel Neves, Zooko Wilcox-O'Hearn, and Christian Winnerlein.")
 
 def compute_blake2(input_string):
     # Create a BLAKE2 hash object
@@ -25,9 +25,9 @@ def compute_blake2(input_string):
 
 genre = st.radio(
     "Choose Input",
-    [":rainbow[Text]", "File"])
+    ["Text", "File"])
 
-if genre == ':rainbow[Text]':
+if genre == 'Text':
     st.write('You selected Text.')
     input_string = st.text_area('Plaintext', placeholder="Input Text...")
     button = st.button("Submit", type="primary")
