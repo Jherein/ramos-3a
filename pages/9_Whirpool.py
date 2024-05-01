@@ -1,6 +1,16 @@
 from Crypto.Hash import SHA256
 import streamlit as st
 
+from nav import navi
+
+st.set_page_config(
+        page_title="Whirpool",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
+
 st.header("Welcome to Whirlpool!🔐")
 st.header('Whirlpool', divider='rainbow')
 

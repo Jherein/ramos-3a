@@ -2,6 +2,15 @@ import streamlit as st
 import hashlib
 import pandas as pd
 
+from nav import navi
+
+st.set_page_config(
+        page_title="Blake2",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
 
 st.header("Welcome to BLAKE2!🔐")
 st.header('BLAKE2', divider='rainbow')

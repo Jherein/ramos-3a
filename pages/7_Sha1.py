@@ -2,6 +2,16 @@ import streamlit as st
 import hashlib
 import pandas as pd
 
+from nav import navi
+
+st.set_page_config(
+        page_title="Sha1",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
+
 st.header("Welcome to SHA1!🔐")
 st.header('SHA1', divider='rainbow')
 

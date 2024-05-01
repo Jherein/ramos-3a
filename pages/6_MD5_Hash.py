@@ -3,6 +3,16 @@ import hashlib
 import pandas as pd
 from io import StringIO
 
+from nav import navi
+
+st.set_page_config(
+        page_title="MD5",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
+
 st.header("Welcome to MD5!🔐")
 st.header('MD5', divider='rainbow')
 
@@ -29,10 +39,11 @@ genre = st.radio(
 
 if genre == 'Text':
     st.write('You selected Text.')
-    input_string = st.text_area('Plaintext', placeholder="Input Text...")
-    button = st.button("Submit", type="primary")
+    input_string = st.text_input('Plaintext', placeholder="Input Text...")
 
-    if button:
+    button_encrypt = st.button('Encrypt', type='primary')
+
+    if button_encrypt:
         if input_string:  # Check if input_string is not empty
             st.write("Input Text:", input_string)
             md5_hash = compute_md5(input_string)
