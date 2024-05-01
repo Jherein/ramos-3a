@@ -45,7 +45,7 @@ if genre == 'Text':
         if input_string:  # Check if input_string is not empty
             st.write("Input Text:", input_string)
             sha1_hash = compute_sha1(input_string)
-            st.write("SHA1 hash of '{}' is: {}".format(input_string, sha1_hash))
+            st.write("SHA1 hash: {}".format(sha1_hash))
         else:
             st.warning("Please input text for SHA1 hash to work!")
 

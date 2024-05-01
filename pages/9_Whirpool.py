@@ -44,7 +44,7 @@ if genre == 'Text':
         if input_string:  # Check if input_string is not empty
             st.write("Input Text:", input_string)
             whirlpool_hash = compute_whirlpool(input_string)
-            st.write("Whirlpool hash of '{}' is: {}".format(input_string, whirlpool_hash))
+            st.write("Whirlpool hash: {}".format(whirlpool_hash))
         else:
             st.warning("Please input text for Whirlpool hash to work!")
 

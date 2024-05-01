@@ -5,6 +5,13 @@ from io import StringIO
 
 from nav import navi
 
+button_style = """
+<style>
+    .button {
+        background-color: yellow;
+    }
+</style>
+"""
 st.set_page_config(
         page_title="MD5",
         page_icon="🔐",
@@ -12,6 +19,9 @@ st.set_page_config(
     )
 
 navi()
+
+# Display the custom style
+st.markdown(button_style, unsafe_allow_html=True)
 
 st.header("Welcome to MD5!🔐")
 st.header('MD5', divider='rainbow')
@@ -39,15 +49,15 @@ genre = st.radio(
 
 if genre == 'Text':
     st.write('You selected Text.')
-    input_string = st.text_input('Plaintext', placeholder="Input Text...")
+    input_string = st.text_area('Plaintext', placeholder="Input Text...")
 
-    button_encrypt = st.button('Encrypt', type='primary')
+    button_encrypt = st.button('Encrypt', type='primary', key='button')
 
     if button_encrypt:
         if input_string:  # Check if input_string is not empty
             st.write("Input Text:", input_string)
             md5_hash = compute_md5(input_string)
-            st.write("MD5 hash of '{}' is: {}".format(input_string, md5_hash))
+            st.write("MD5 hash: {}".format(md5_hash))
         else:
             st.warning("Please input text for MD5 hash to work!")
 

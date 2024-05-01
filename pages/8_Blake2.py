@@ -45,7 +45,7 @@ if genre == 'Text':
         if input_string:  # Check if input_string is not empty
             st.write("Input Text:", input_string)
             blake2_hash = compute_blake2(input_string)
-            st.write("BLAKE2 hash of '{}' is: {}".format(input_string, blake2_hash))
+            st.write("BLAKE2 hash: {}".format(blake2_hash))
         else:
             st.warning("Please input text for BLAKE2 hash to work!")
 
