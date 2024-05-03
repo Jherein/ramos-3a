@@ -14,10 +14,10 @@ def navi():
         st.page_link("pages/5_Block_Cipher🔐.py", label="Block Cipher", icon="🗝️", use_container_width=True)
     st.markdown('---')
     with columns2[0]:
-        st.page_link("/workspaces/ramos-3a/pages/6_MD5_Hash.py", label="MD5", icon="🗝️", use_container_width=True)
+        st.page_link("pages/6_MD5_Hash.py", label="MD5", icon="🗝️", use_container_width=True)
     with columns2[1]:
-        st.page_link("/workspaces/ramos-3a/pages/7_Sha1.py", label="SHA1", icon="🗝️", use_container_width=True)
+        st.page_link("pages/7_Sha1.py", label="SHA1", icon="🗝️", use_container_width=True)
     with columns2[2]:
-        st.page_link("/workspaces/ramos-3a/pages/8_Blake2.py", label="BLAKE2", icon="🗝️", use_container_width=True)
+        st.page_link("pages/8_Blake2.py", label="BLAKE2", icon="🗝️", use_container_width=True)
     with columns2[3]:
-        st.page_link("/workspaces/ramos-3a/pages/9_Whirpool.py", label="WHIRLPOOL", icon="🗝️", use_container_width=True)
+        st.page_link("pages/9_Whirpool.py", label="WHIRLPOOL", icon="🗝️", use_container_width=True)

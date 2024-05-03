@@ -34,7 +34,8 @@ st.markdown("""
             color: blue !important;
             padding: 20px !important;
         }
-            
+
+          
     </style>
 """, unsafe_allow_html=True)
 
@@ -59,7 +60,7 @@ def compute_md5(input_string):
 
     return hex_digest
 
-genre = st.selectbox(
+genre = st.radio(
     "What type of content do you want to encrypt?",
     ["Text", "File"])
     
