@@ -1,5 +1,23 @@
 import streamlit as st
 
+from nav import navi
+
+st.set_page_config(
+        page_title="Reverse Cipher",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
+
+st.header("Welcome to Reverse Cipher!🔐")
+st.header('Reverse Cipher', divider='rainbow')
+
+on = st.toggle("Show History")
+
+if on:
+    st.write('Reverse Cipher uses a pattern of reversing the string of plain text to convert as cipher text. The process of encryption and decryption is same.')
+
 def reverse_cipher(plaintext):
     # Reverse the plaintext
     ciphertext = plaintext[::-1]
@@ -19,7 +37,7 @@ if genre == 'Text':
     option = st.radio('Choose process', options=('Encrypt', 'Decrypt'))
 
     if option == 'Encrypt':
-        btn = st.button('Submit')
+        btn = st.button('Submit', type='primary')
         if btn:
             if not plaintext:
                 st.warning('Please enter a text to encrypt!')
@@ -32,7 +50,7 @@ if genre == 'Text':
             # Decrypt plaintext using Reverse Cipher
             ciphertext = st.text_input('Enter the ciphertext to decrypt')
             decrypted_plaintext = reverse_decipher(ciphertext)
-            btn = st.button('Submit')
+            btn = st.button('Submit', type='primary')
             if btn:
                 if not ciphertext:
                     st.warning('Please input a text to decrypt!')
@@ -52,13 +70,13 @@ elif genre == 'File':
 
         if radio == 'Encypt':
             cipher_reverse = reverse_cipher(file_contents)
-            radio_btn = st.button('Submit')
+            radio_btn = st.button('Submit', type='primary')
             if radio_btn:
                 st.write("Encrypted File:", cipher_reverse)
         elif radio == 'Decrypt':
             ciphertext = st.text_input('Enter the ciphertext to decrypt')
             decipher_reverse = reverse_decipher(ciphertext)
-            btn = st.button('Submit')
+            btn = st.button('Submit', type='primary')
             if btn:
                     if not ciphertext:
                         st.warning('Please input a text to decrypt!')
