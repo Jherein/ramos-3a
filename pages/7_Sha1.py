@@ -12,6 +12,31 @@ st.set_page_config(
 
 navi()
 
+st.markdown("""
+    <style>
+        body {
+            background-color: lightblue !important;
+        }
+        .stButton button {
+            background-color: #ff8fab !important;
+            border: none;
+        }
+        .stButton button:hover {
+            background-color: #fb6f92 !important;
+            border: none;
+        }
+         textarea {
+            color: #fb6f92 !important;
+         }
+
+        input {
+            color: #fb6f92 !important;
+            padding: 20px !important;
+        }  
+            
+    </style>
+""", unsafe_allow_html=True)
+
 st.header("Welcome to SHA1!🔐")
 st.header('SHA1', divider='rainbow')
 
@@ -43,9 +68,8 @@ if genre == 'Text':
 
     if button:
         if input_string:  # Check if input_string is not empty
-            st.write("Input Text:", input_string)
             sha1_hash = compute_sha1(input_string)
-            st.write("SHA1 hash: {}".format(sha1_hash))
+            st.text_input("SHA1 hash", value=sha1_hash)
         else:
             st.warning("Please input text for SHA1 hash to work!")
 

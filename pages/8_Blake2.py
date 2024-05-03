@@ -12,6 +12,28 @@ st.set_page_config(
 
 navi()
 
+st.markdown("""
+    <style>
+        body {
+            background-color: lightblue !important;
+        }
+        .stButton button {
+            background-color: #02c39a !important;
+            border: none;
+        }
+        .stButton button:hover {
+            background-color: #00a896 !important;
+            border: none;
+        }
+         textarea {
+            color: #00a896 !important;
+         }
+
+          
+            
+    </style>
+""", unsafe_allow_html=True)
+
 st.header("Welcome to BLAKE2!🔐")
 st.header('BLAKE2', divider='rainbow')
 
@@ -43,9 +65,8 @@ if genre == 'Text':
 
     if button:
         if input_string:  # Check if input_string is not empty
-            st.write("Input Text:", input_string)
             blake2_hash = compute_blake2(input_string)
-            st.write("BLAKE2 hash: {}".format(blake2_hash))
+            st.text_area("BLAKE2 hash", value=blake2_hash, height=150)
         else:
             st.warning("Please input text for BLAKE2 hash to work!")
 

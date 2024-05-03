@@ -12,8 +12,7 @@ def navi():
         st.page_link("pages/4_Primitive_Root🔐.py", label="Primitive Root", icon="🗝️", use_container_width=True)
     with columns[3]:
         st.page_link("pages/5_Block_Cipher🔐.py", label="Block Cipher", icon="🗝️", use_container_width=True)
-
-    st.write('---')
+    st.markdown('---')
     with columns2[0]:
         st.page_link("/workspaces/ramos-3a/pages/6_MD5_Hash.py", label="MD5", icon="🗝️", use_container_width=True)
     with columns2[1]:

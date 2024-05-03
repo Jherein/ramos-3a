@@ -11,6 +11,34 @@ st.set_page_config(
 
 navi()
 
+st.markdown("""
+    <style>
+        body {
+            background-color: lightblue !important;
+        }
+        .stButton button {
+            background-color: #7b2cbf !important;
+            border: none;
+        }
+        .stButton button:hover {
+            background-color: #5a189a !important;
+            border: none;
+        }
+         textarea {
+            color: #5a189a !important;
+         }
+
+        input {
+            color: #5a189a !important;
+            padding: 20px !important;
+        }    
+
+          
+            
+    </style>
+""", unsafe_allow_html=True)
+
+
 st.header("Welcome to Whirlpool!🔐")
 st.header('Whirlpool', divider='rainbow')
 
@@ -42,9 +70,8 @@ if genre == 'Text':
 
     if button:
         if input_string:  # Check if input_string is not empty
-            st.write("Input Text:", input_string)
             whirlpool_hash = compute_whirlpool(input_string)
-            st.write("Whirlpool hash: {}".format(whirlpool_hash))
+            st.text_input("Whirlpool hash", whirlpool_hash)
         else:
             st.warning("Please input text for Whirlpool hash to work!")
 
