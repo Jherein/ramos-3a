@@ -4,7 +4,7 @@ import streamlit as st
 from nav import navi
 
 st.set_page_config(
-        page_title="Simple Substitution Cipher",
+        page_title="RSA",
         page_icon="🔐",
         layout="wide"
     )
