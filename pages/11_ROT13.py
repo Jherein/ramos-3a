@@ -59,7 +59,7 @@ if genre == 'Text':
                 st.write("Encrypted Plaintext:", ciphertext)
 
     elif option == 'Decrypt':
-                # Decrypt plaintext using Reverse Cipher
+                # Decrypt plaintext using ROT13
                 ciphertext = st.text_input('Enter the ciphertext to decrypt')
                 decrypted_plaintext = rot13_decrypt(ciphertext)
                 btn = st.button('Submit', type='primary')
@@ -77,7 +77,7 @@ elif genre == 'File':
         file_contents = uploaded_file.getvalue().decode("utf-8")
         st.write("File contents:", file_contents)
 
-        # Compute Reverse Cipher of file contents
+        # Compute ROT13 of file contents
         radio = st.radio("Choose process", options=("Encypt", "Decrypt"))
 
         if radio == 'Encypt':

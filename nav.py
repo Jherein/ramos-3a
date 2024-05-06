@@ -20,4 +20,4 @@ def navi():
     with columns2[2]:
         st.page_link("pages/8_Blake2.py", label="BLAKE2", icon="🗝️", use_container_width=True)
     with columns2[3]:
-        st.page_link("pages/9_Whirpool.py", label="WHIRLPOOL", icon="🗝️", use_container_width=True)
+        st.page_link("pages/9_RIPEMD-160.py", label="WHIRLPOOL", icon="🗝️", use_container_width=True)

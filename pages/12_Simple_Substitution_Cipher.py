@@ -1,6 +1,24 @@
 import string
 import streamlit as st
 
+from nav import navi
+
+st.set_page_config(
+        page_title="Simple Substitution Cipher",
+        page_icon="🔐",
+        layout="wide"
+    )
+
+navi()
+
+st.header("Welcome to Simple Substitution Cipher!🔐")
+st.header('Simple Substitution Cipher', divider='rainbow')
+
+on = st.toggle("Show History")
+
+if on:
+    st.write('')
+
 def generate_substitution_key(shift):
     """
     Generate a substitution key based on a given shift.
@@ -56,7 +74,7 @@ if genre == 'Text':
                 st.write("Encrypted Plaintext:", encrypted_text)
 
     elif option == 'Decrypt':
-                    # Decrypt plaintext using Reverse Cipher
+                    # Decrypt plaintext using Simple Substitution Cipher
                     ciphertext = st.text_input('Enter the ciphertext to decrypt')
                     decrypted_text = decrypt(ciphertext, substitution_key)
                     btn = st.button('Submit', type='primary')
