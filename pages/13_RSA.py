@@ -11,13 +11,22 @@ st.set_page_config(
 
 navi()
 
+st.markdown("""
+    <style>
+         textarea {
+            color: #fb6f92 !important;
+         }
+            
+    </style>
+""", unsafe_allow_html=True)
+
 st.header("Welcome to Simple RSA!🔐")
 st.header('RSA', divider='rainbow')
 
 on = st.toggle("Show History")
 
 if on:
-    st.write('')
+    st.write('The Rivest-Shamir-Adleman (RSA) encryption technique is asymmetric and commonly utilized in a variety of products and services. Asymmetric encryption employs a mathematically connected key pair to encrypt and decrypt data. A private and public key are generated, with the public key visible to everybody and the private key a secret known only to the key pair creator. With RSA, data can be encrypted using either the private or public key, and decrypted using the other key. This is one of the reasons why RSA is the most popular asymmetric encryption algorithm.')
 
 # Generate RSA key pair
 (public_key, private_key) = rsa.newkeys(1024)  # You can adjust the key size as needed
@@ -34,10 +43,12 @@ if on:
 message = st.text_area('Enter your text:')
 btn = st.radio('Choose', options=('Encrypt', 'Decrypt'))
 
-if btn == 'Encrypt':        
-        # Encrypt message using the recipient's public key
-        encrypted_message = rsa.encrypt(message.encode('utf-8'), public_key)
-        st.write("Encrypted Message:", encrypted_message)
+if btn == 'Encrypt':  
+        submit = st.button('Submit') 
+        if submit:     
+            # Encrypt message using the recipient's public key
+            encrypted_message = rsa.encrypt(message.encode('utf-8'), public_key)
+            st.write("Encrypted Message:", encrypted_message)
 elif btn == 'Decrypt':
         # Decrypt the encrypted message using the private key
         ciphertext = st.text_input('Enter the ciphertext to decrypt')
@@ -47,4 +58,4 @@ elif btn == 'Decrypt':
         btn_submit = st.button('Submit')
         if btn_submit:
             st.write("Original Message:", message)
-            st.write("Decrypted Message:", decrypted_message.decode('utf-8'))
+            st.text_area("Decrypted Message:", decrypted_message.decode('utf-8'))

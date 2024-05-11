@@ -17,7 +17,7 @@ st.header('Simple Substitution Cipher', divider='rainbow')
 on = st.toggle("Show History")
 
 if on:
-    st.write('')
+    st.write("It was one of the earliest methods used to encrypt messages. It's a type of monoalphabetic substitution cipher, meaning each letter in the plaintext is replaced with another letter consistently throughout the message. It is basically consists of substituting every plaintext character for a different ciphertext character. Unlike the Caesar cipher, which shifts the alphabet by a set number, the simple substitution cipher employs a completely randomized cipher alphabet.")
 
 def generate_substitution_key(shift):
     """
@@ -107,7 +107,7 @@ elif genre == 'File':
                     if not ciphertext:
                         st.warning('Please input a text to decrypt!')
                     else:
-                        st.write("Decrypted Ciphertext:", decrypt_subs)
+                        st.text_area("Decrypted Ciphertext:", decrypt_subs)
         
 else:
     st.write("Please choose.")
