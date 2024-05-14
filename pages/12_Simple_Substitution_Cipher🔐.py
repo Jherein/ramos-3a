@@ -11,6 +11,14 @@ st.set_page_config(
 
 navi()
 
+st.markdown("""
+    <style>
+        text area {
+            color: #5a189a !important;
+         }         
+    </style>
+""", unsafe_allow_html=True)
+
 st.header("Welcome to Simple Substitution Cipher!🔐")
 st.header('Simple Substitution Cipher', divider='rainbow')
 
@@ -71,7 +79,7 @@ if genre == 'Text':
                 st.warning('Please enter a text to encrypt!')
             else:
                 encrypted_text = encrypt(plaintext, substitution_key)
-                st.write("Encrypted Plaintext:", encrypted_text)
+                st.text_area("Encrypted Plaintext:", encrypted_text)
 
     elif option == 'Decrypt':
                     # Decrypt plaintext using Simple Substitution Cipher
@@ -82,7 +90,7 @@ if genre == 'Text':
                         if not ciphertext:
                             st.warning('Please input a text to decrypt!')
                         else:
-                            st.write("Decrypted Ciphertext:", decrypted_text) 
+                            st.text_area("Decrypted Ciphertext:", decrypted_text) 
 
 elif genre == 'File':
     st.write('You selected File.')
@@ -98,7 +106,7 @@ elif genre == 'File':
             substitute = encrypt(file_contents, generate_substitution_key(5))
             radio_btn = st.button('Submit', type='primary')
             if radio_btn:
-                st.write("Encrypted File:", substitute)
+                st.text_area("Encrypted File:", substitute)
         elif radio == 'Decrypt':
             ciphertext = st.text_input('Enter the ciphertext to decrypt')
             decrypt_subs = decrypt(ciphertext, generate_substitution_key(5))

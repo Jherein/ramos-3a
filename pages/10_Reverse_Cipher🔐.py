@@ -44,7 +44,7 @@ if genre == 'Text':
             else:
                 # Encrypt plaintext using Reverse Cipher
                 ciphertext = reverse_cipher(plaintext)
-                st.write("Encrypted Plaintext:", ciphertext)
+                st.text_area("Encrypted Plaintext:", ciphertext)
 
     elif option == 'Decrypt':
             # Decrypt plaintext using Reverse Cipher
@@ -55,7 +55,7 @@ if genre == 'Text':
                 if not ciphertext:
                     st.warning('Please input a text to decrypt!')
                 else:
-                    st.write("Decrypted Ciphertext:", decrypted_plaintext)
+                    st.text_area("Decrypted Ciphertext:", decrypted_plaintext)
            
 elif genre == 'File':
     st.write('You selected File.')
@@ -72,7 +72,7 @@ elif genre == 'File':
             cipher_reverse = reverse_cipher(file_contents)
             radio_btn = st.button('Submit', type='primary')
             if radio_btn:
-                st.write("Encrypted File:", cipher_reverse)
+                st.text_area("Encrypted File:", cipher_reverse)
         elif radio == 'Decrypt':
             ciphertext = st.text_input('Enter the ciphertext to decrypt')
             decipher_reverse = reverse_decipher(ciphertext)
@@ -81,7 +81,7 @@ elif genre == 'File':
                     if not ciphertext:
                         st.warning('Please input a text to decrypt!')
                     else:
-                        st.write("Decrypted Ciphertext:", decipher_reverse)
+                        st.text_area("Decrypted Ciphertext:", decipher_reverse)
         
 else:
     st.write("Please choose.")

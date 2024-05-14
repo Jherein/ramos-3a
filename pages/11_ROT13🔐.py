@@ -16,7 +16,7 @@ st.header('ROT13', divider='rainbow')
 on = st.toggle("Show History")
 
 if on:
-    st.write('')
+    st.write('ROT13, short for "Rotate by 13 places," is a simple substitution cipher used to obscure text by replacing each letter with the letter thirteen positions ahead in the alphabet. It has a fascinating history, dating back to the early days of Usenet, an early online messaging system. Usenet users employed ROT13 as a means to hide spoilers or sensitive content while still allowing interested readers to easily decode the message. Because ROT13 is a symmetric cipher, meaning the same algorithm can be used for both encryption and decryption, it gained popularity for its simplicity and convenience. Despite its lack of robust security, ROT13 remains in use today in various contexts, often as a playful or nostalgic nod to its origins in early internet culture.')
 
 def rot13_encrypt(text):
     encrypted_text = ""
@@ -56,7 +56,7 @@ if genre == 'Text':
             else:
                 # Encrypt plaintext using Reverse Cipher
                 ciphertext = rot13_encrypt(plaintext)
-                st.write("Encrypted Plaintext:", ciphertext)
+                st.text_area("Encrypted Plaintext:", ciphertext)
 
     elif option == 'Decrypt':
                 # Decrypt plaintext using ROT13
@@ -67,7 +67,7 @@ if genre == 'Text':
                     if not ciphertext:
                         st.warning('Please input a text to decrypt!')
                     else:
-                        st.write("Decrypted Ciphertext:", decrypted_plaintext)
+                        st.text_area("Decrypted Ciphertext:", decrypted_plaintext)
            
 elif genre == 'File':
     st.write('You selected File.')
@@ -84,7 +84,7 @@ elif genre == 'File':
             cipher_reverse = rot13_encrypt(file_contents)
             radio_btn = st.button('Submit', type='primary')
             if radio_btn:
-                st.write("Encrypted File:", cipher_reverse)
+                st.text_area("Encrypted File:", cipher_reverse)
         elif radio == 'Decrypt':
             ciphertext = st.text_input('Enter the ciphertext to decrypt')
             decipher_reverse = rot13_decrypt(ciphertext)
@@ -93,7 +93,7 @@ elif genre == 'File':
                     if not ciphertext:
                         st.warning('Please input a text to decrypt!')
                     else:
-                        st.write("Decrypted Ciphertext:", decipher_reverse)
+                        st.text_area("Decrypted Ciphertext:", decipher_reverse)
         
 else:
     st.write("Please choose.")
